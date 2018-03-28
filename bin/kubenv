@@ -1,0 +1,3 @@
+#!/bin/bash
+export KUBECONFIG=~/.kube/$1.admin.conf
+echo "use config=$KUBECONFIG"
