@@ -17,6 +17,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'valloric/youcompleteme'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
+Plugin 'scrooloose/nerdcommenter'
+
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -44,6 +50,10 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" private configurations 
+" load bash profile
+set nu
+
 
 " 设置跳转到方法/函数定义的快捷键 
 
