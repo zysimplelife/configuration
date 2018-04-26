@@ -21,6 +21,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'benmills/vimux'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -63,6 +64,12 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
 
 " NERDTree config 
 " How can I map a specific key or shortcut to open NERDTree?

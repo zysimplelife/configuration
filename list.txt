@@ -1,0 +1,5 @@
+.bash_aliases
+.gitconfig
+.tmux.conf
+.vimrc
+

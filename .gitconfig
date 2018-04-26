@@ -1,0 +1,38 @@
+[user]
+	email = charlie.zha@ericsson.com
+	name = ezhayog
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+    showbranch = auto
+	ui = true
+
+[alias]
+	st = status -sb
+	ci = commit
+	cia = commit --amend
+	co = checkout
+    graph = log --graph --oneline --decorate=short --branches='*'
+	br = branch
+	df = diff --color-words='[^[:space:]]'
+	sh = show --color-words='[^[:space:]]'
+	lg = log -p
+    pu = pull origin master
+    rb = rebase -i master
+	sbm = branch --set-upstream-to origin/master
+    serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
+    pend = cherry -v origin/master
+	push-for-review = !perl /home/ezhayog/workspace/adp-gs-test-lib/hooks/push-for-review.pl
+	meld-diff = !/home/ezhayog/workspace/adp-gs-test-lib/hooks/meld-diff.sh
+	installhooks = !/home/ezhayog/workspace/adp-gs-test-lib/hooks/install.sh $(git rev-parse --show-toplevel)
+	gush = !sh -c '/home/ezhayog/workspace/adp-gs-test-lib/hooks/push.sh $@' -
+
+[format]
+    pretty = '%C(yellow)%h%Creset %C(magenta)%cd %C(yellow)%an %Creset %d %s'
+
+[core]
+	editor = vim
+[merge]
+	tool = kdiff3
