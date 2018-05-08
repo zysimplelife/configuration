@@ -22,6 +22,7 @@ Plugin 'valloric/youcompleteme'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'benmills/vimux'
+Plugin 'Raimondi/delimitMate'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html
