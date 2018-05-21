@@ -23,6 +23,7 @@ Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'benmills/vimux'
 Plugin 'Raimondi/delimitMate'
+Plugin 'fatih/vim-go'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -52,15 +53,15 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" private configurations 
+" private configurations
 " load bash profile
 set nu
 
 
-" 设置跳转到方法/函数定义的快捷键 
+" 设置跳转到方法/函数定义的快捷键
 
 "use space for tab
-set tabstop=4 
+set tabstop=4
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
@@ -72,12 +73,17 @@ map <Leader>vl :VimuxRunLastCommand<CR>
 " Close vim tmux runner opened by VimuxRunCommand
 map <Leader>vq :VimuxCloseRunner<CR>
 
-" NERDTree config 
+" NERDTree config
 " How can I map a specific key or shortcut to open NERDTree?
 map <C-n> :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
 " How can I close vim if the only window left open is a NERDTree?
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" auto format go "
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "gofmt"
 
+" hight light end whitespace
+autocmd bufenter * match Error /\s\+$/
 

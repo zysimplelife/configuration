@@ -9,7 +9,7 @@ install_go(){
 }
 
 run_go(){
-    docker run --rm -v "$PWD":/go -w /go golang:1.8 go $1 $2 
+    docker run --rm -i -v "$PWD":/go -w /go golang:1.10.1 go $@ 
 }
 
 format_go(){
