@@ -24,10 +24,10 @@
 	sbm = branch --set-upstream-to origin/master
     serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
     pend = cherry -v origin/master
-	push-for-review = !perl /home/ezhayog/workspace/adp-gs-test-lib/hooks/push-for-review.pl
-	meld-diff = !/home/ezhayog/workspace/adp-gs-test-lib/hooks/meld-diff.sh
-	installhooks = !/home/ezhayog/workspace/adp-gs-test-lib/hooks/install.sh $(git rev-parse --show-toplevel)
-	gush = !sh -c '/home/ezhayog/workspace/adp-gs-test-lib/hooks/push.sh $@' -
+	push-for-review = !perl /home/ezhayog/workspace/adp-gs-pm-bulk-reporter/hooks/push-for-review.pl
+	meld-diff = !/home/ezhayog/workspace/adp-gs-pm-bulk-reporter/hooks/meld-diff.sh
+	installhooks = !/home/ezhayog/workspace/adp-gs-pm-bulk-reporter/hooks/install.sh $(git rev-parse --show-toplevel)
+	gush = !sh -c '/home/ezhayog/workspace/adp-gs-pm-bulk-reporter/hooks/push.sh $@' -
 
 [format]
     pretty = '%C(yellow)%h%Creset %C(magenta)%cd %C(yellow)%an %Creset %d %s'

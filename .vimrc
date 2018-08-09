@@ -15,13 +15,12 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-vinegar'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'benmills/vimux'
 Plugin 'Raimondi/delimitMate'
 Plugin 'fatih/vim-go'
 
@@ -57,8 +56,8 @@ filetype plugin indent on    " required
 " load bash profile
 set nu
 
-
-" 设置跳转到方法/函数定义的快捷键
+" disable recording macros: I hit this key accidentally too often
+nnoremap q <Nop>
 
 "use space for tab
 set tabstop=4
@@ -66,23 +65,19 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-" Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
-" Close vim tmux runner opened by VimuxRunCommand
-map <Leader>vq :VimuxCloseRunner<CR>
+"netrw configuration
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
 
-" NERDTree config
-" How can I map a specific key or shortcut to open NERDTree?
-map <C-n> :NERDTreeToggle<CR>
-map <leader>r :NERDTreeFind<cr>
-" How can I close vim if the only window left open is a NERDTree?
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " auto format go "
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "gofmt"
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+
 
 " hight light end whitespace
 autocmd bufenter * match Error /\s\+$/
