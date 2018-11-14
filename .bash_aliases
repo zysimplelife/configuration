@@ -31,7 +31,14 @@ cd_to_workspace(){
 }
 
 use_k8s_config(){
-    export KUBECONFIG=~/.kube/$1_admin.conf
+    FILE="$HOME/.kube/$1_admin.conf"
+    if [[ ! -f $FILE ]]; then
+        echo "$FILE does not exist"
+        return
+    fi
+
+    export KUBECONFIG=$FILE
+    echo "$FILE is used now"
 }
 
 delete_ns(){

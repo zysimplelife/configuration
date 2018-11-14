@@ -65,7 +65,9 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
-
+"youCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 "netrw configuration
 "let g:netrw_banner = 0
 "let g:netrw_liststyle = 3
@@ -79,7 +81,10 @@ let g:go_fmt_autosave = 1
 let g:go_fmt_command = "gofmt"
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
 
 " hight light end whitespace
 autocmd bufenter * match Error /\s\+$/
+" auto change directory to directory containing current file
+autocmd BufEnter * silent! lcd %:p:h
 
