@@ -3,6 +3,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -16,13 +17,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-vinegar'
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 Plugin 'martinda/Jenkinsfile-vim-syntax'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Raimondi/delimitMate'
 Plugin 'fatih/vim-go'
+Plugin 'junegunn/fzf.vim'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html
