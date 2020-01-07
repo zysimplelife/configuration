@@ -79,8 +79,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " auto format go "
 let g:go_fmt_autosave = 1
-let g:go_fmt_command = "gofmt"
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_fmt_command = "goimports"
+"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 
@@ -89,3 +89,7 @@ autocmd bufenter * match Error /\s\+$/
 " auto change directory to directory containing current file
 autocmd BufEnter * silent! lcd %:p:h
 
+
+"golint
+set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
