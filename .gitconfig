@@ -31,7 +31,7 @@
 	gush = !sh -c '/home/ezhayog/workspace/adp-gs-pm-bulk-reporter/hooks/push.sh $@' -
 
 [format]
-    pretty = '%C(yellow)%h%Creset %C(magenta)%cd %C(yellow)%an %Creset %d %s'
+    #pretty = '%C(yellow)%h%Creset %C(magenta)%cd %C(yellow)%an %Creset %d %s'
 
 [core]
 	editor = vim

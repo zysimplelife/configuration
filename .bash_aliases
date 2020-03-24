@@ -21,6 +21,7 @@ alias kpods="kubectl get po"
 alias kinspect="kubectl describe"
 alias setAzClient=set_az_client
 alias setLocalClient=set_local_client
+alias sourceConfd="source ~/workspace/confd-basic-7.2.1.linux.x86_64/confd-basic-7.2.1-bin/confdrc "
 
 krun() { name=$1; shift; image=$1; shift; kubectl run -it --generator=run-pod/v1 --image $image $name -- $@; }
 klogs() { kubectl logs $*;}
@@ -92,9 +93,11 @@ get_az_storage_account(){
 
 set_local_client(){
     export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
+#    export KUBECONFIG="/etc/rancher/k3s/k3s.yaml"
     kubectl cluster-info
-    set_az_resource
-    get_az_storage_account
+#    set_az_resource
+#    get_az_storage_account
+    export CLUSTER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' kind-control-plane)
 }
 
 set_az_client(){
@@ -147,6 +150,7 @@ helm upgrade ${KUBE_NAME:=adp-services} ~/workspace/adp/helm/integration -f ~/wo
 }
 
 create_local_cluster(){
+    kind delete cluster
     kind create cluster
     set_local_client
 
@@ -188,3 +192,8 @@ function get_json_response () {
   set +vx; eval "$bash_options"
   echo $output
 }
+
+
+if [ -f ~/.bash_fzf ]; then
+    . ~/.bash_fzf
+fi
